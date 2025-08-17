@@ -61,5 +61,5 @@
 (add-to-list 'load-path "~/.emacs.d/lisp")
 (load "welcome.el")
 (load "packages.el")
-(load "org.el")
+(load "org-config.el")
 (load "modes.el")

@@ -78,8 +78,8 @@
   :config
   ;; Run pdf-tools-install only when pdf-tools loads
   (pdf-tools-install)
-  (pdf-view-midnight-minor-mode))
-
+  ;; (pdf-view-midnight-minor-mode))	
+  )
 
 
 ;; Emacs LaTeX configuration using AUCTeX + minted + pdf-tools
