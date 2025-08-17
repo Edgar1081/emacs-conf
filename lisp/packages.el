@@ -27,8 +27,11 @@
 ;; MAGIT package
 (use-package magit
   :defer t
-  :bind ("C-x g" . magit-status))
-(setq magit-revert-buffers 'silent)
+  :bind ("C-x g" . magit-status)
+  :config
+  (setq magit-revert-buffers 'silent)
+  (global-auto-revert-mode 1)
+  (setq magit-refresh-status-buffer nil))
 
 ;; Doom mode line
 (use-package doom-modeline
