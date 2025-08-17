@@ -23,7 +23,7 @@
 (use-package lsp-java
   :ensure t
   :defer t
-  :hook (java-mode . lsp))
+  :hook (java-mode . lsp-deferred))
 
 ;; Core LSP configuration (deferred)
 (use-package lsp-mode
@@ -40,7 +40,10 @@
   :ensure t
   :defer t
   :commands lsp-ui-mode
-  :hook (lsp-mode . lsp-ui-mode)
+  :hook (
+	 (lsp-mode . lsp-ui-mode)
+	 (lsp-mode . company-mode)
+	 )
   :config
   (setq lsp-ui-doc-enable t
         lsp-ui-doc-show-with-cursor t
