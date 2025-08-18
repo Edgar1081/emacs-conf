@@ -1,0 +1,26 @@
+#+OPTIONS: title:nil
+#+OPTIONS: toc:nil
+#+BEGIN_EXPORT latex
+\begin{titlepage}
+\centering
+\begin{minipage}[t]{0.25\textwidth}
+  \includegraphics[width=0.8\textwidth]{~/.emacs.d/org-templates/logo.png}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.25\textwidth}
+  \includegraphics[width=0.8\textwidth]{~/.emacs.d/org-templates/logo2.png}
+\end{minipage}
+
+\vspace{2cm}
+
+{\bfseries\LARGE Universidad Nacional Autónoma de México \par}
+\vspace{1cm}
+{\scshape\Large Facultad de Ciencias \par}
+\vspace{1cm}
+{\scshape\Huge Subject \par}
+\vspace{1cm}
+{\scshape\LARGE \emph{Homework's name} \par}
+\vspace{1cm}
+{\Large \texttt{id} - name \par}
+\end{titlepage}
+#+END_EXPORT

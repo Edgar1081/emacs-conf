@@ -89,10 +89,16 @@
         (emacs-lisp . t)
         (shell   . t)
         (C       . t)
-        (java    . t)))
+        (java    . t)
+	(latex . t)))
 
 ;; Load them into org-babel
 (org-babel-do-load-languages
  'org-babel-load-languages
  my/org-babel-languages)
 
+;; In line preview
+(use-package org-fragtog
+  :ensure t
+  :defer t
+  :hook (org-mode . org-fragtog-mode))

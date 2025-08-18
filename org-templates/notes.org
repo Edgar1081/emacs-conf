@@ -1,0 +1,8 @@
+#+TITLE: Lecture Notes
+#+AUTHOR: Luis Edgar Flores Ayala
+#+DATE: 
+#+OPTIONS: toc:nil
+#+LATEX_CLASS: article
+#+LATEX_HEADER: \usepackage{minted}  % for code highlighting
+#+LATEX_HEADER: \usepackage{geometry}
+#+LATEX_HEADER: \geometry{a4paper, margin=1in}
