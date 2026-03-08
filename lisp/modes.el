@@ -11,20 +11,6 @@
   :ensure t
   :defer t)
 
-;; Haskell-specific LSP hook
-(use-package lsp-haskell
-  :ensure t
-  :defer t
-  :hook (haskell-mode . lsp-deferred)
-  :config
-  (setq lsp-haskell-server-path "haskell-language-server-wrapper"
-        lsp-haskell-server-args nil))
-
-(use-package lsp-java
-  :ensure t
-  :defer t
-  :hook (java-mode . lsp-deferred))
-
 ;; Core LSP configuration (deferred)
 (use-package lsp-mode
   :defer t
@@ -62,3 +48,35 @@
   :ensure t
   :defer t
   :hook (lsp-mode . flycheck-mode))
+
+;; Haskell-specific LSP hook
+(use-package lsp-haskell
+  :ensure t
+  :defer t
+  :hook (haskell-mode . lsp-deferred)
+  :config
+  (setq lsp-haskell-server-path "haskell-language-server-wrapper"
+        lsp-haskell-server-args nil))
+
+;; Java-specific LSP hook
+(use-package lsp-java
+  :ensure t
+  :defer t
+  :hook (java-mode . lsp-deferred))
+
+;;C/C++-specific LSP hook
+(use-package cc-mode
+  :ensure nil
+  :hook ((c-mode c++-mode) . lsp-deferred))
+
+;; Rust
+(use-package rust-mode
+  :ensure t
+  :defer t
+  :hook (rust-mode . lsp-deferred))
+
+;; Vala
+(use-package vala-mode
+  :ensure t
+  :defer t
+  :hook (vala-mode . lsp-deferred))

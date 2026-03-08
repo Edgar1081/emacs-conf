@@ -81,14 +81,13 @@
   ;; (pdf-view-midnight-minor-mode))	
   )
 
-
-;; Emacs LaTeX configuration using AUCTeX + minted + pdf-tools
+;; Emacs LaTeX configuration using AUCTeX / minted / pdf-tools
 (use-package auctex
   :defer t
   :ensure t
   :hook (LaTeX-mode . LaTeX-preview-setup)
   :config
-  ;; Automatically save style info and parse on load
+  ;; Automatically save style
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
   (setq TeX-save-query nil)
@@ -98,10 +97,10 @@
   (setq TeX-source-correlate-method 'synctex)
   (add-hook 'LaTeX-mode-hook #'TeX-source-correlate-mode)
 
-  ;; Use shell-escape for packages like minted
+  ;; Use shell-escape for minted
   (setq TeX-command-extra-options "-shell-escape")
 
-  ;; Use pdf-tools as default viewer if installed
+  ;; pdf-tools default viewer if installed
   (setq TeX-view-program-selection
         '((output-pdf "PDF Tools")
           (output-dvi "DVI Viewer")
@@ -120,3 +119,33 @@
   (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode)
   (add-hook 'TeX-after-compilation-finished-functions
             #'TeX-revert-document-buffer))
+
+;; smartparens
+(use-package smartparens
+  :ensure t
+  :defer t
+  :hook
+  (smartparens-mode . show-smartparens-mode)
+  ((prog-mode text-mode) . smartparens-mode)
+  )
+
+;;Clojure
+(unless (package-installed-p 'cider)
+  (package-install 'cider))
+
+(unless (package-installed-p 'clojure-mode)
+  (package-install 'clojure-mode))
+
+(use-package cider
+  :ensure t
+  :defer t)
+
+(use-package proof-general
+  :ensure t
+  :defer t)
+
+(setq proof-output-tooltips nil)
+(setq proof-three-window-enable t)
+(setq proof-delete-empty-windows nil)
+(setq proof-electric-terminator-enable t)
+(setq proof-shell-annotated-prompt-regexp "^<prompt>")
